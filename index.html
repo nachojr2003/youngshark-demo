@@ -1,0 +1,1214 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YOUNGSHARK — Ropa importada desde USA · Miraflores, Lima</title>
+<meta name="description" content="Tienda de ropa streetwear y gymwear importada desde USA. +400 prendas para entrega inmediata, tienda física en Miraflores, Lima y envíos a todo el Perú. YoungLA, Gymshark, Devant y Belcast.">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --tinta:#000000;
+    --papel:#FFFFFF;
+    --hueso:#F1F1F1;
+    --gris:#4A4A4A;
+    --gris-cl:#7A7A7A;
+    --linea:#DEDEDE;
+    --display:'Archivo Black','Helvetica Neue','Arial Black',Impact,sans-serif;
+    --sans:'Archivo','Helvetica Neue',Helvetica,Arial,system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--papel);color:var(--tinta);
+    font-family:var(--sans);font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  /* height:auto es obligatorio: los atributos width/height de cada imagen (que están
+     para reservar espacio y evitar saltos de layout) se aplican como height:640px y
+     ganarían sobre el aspect-ratio de los recortes — las fotos saldrían enteras, con
+     los subtítulos quemados del reel a la vista. */
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit}
+  p{margin:0}
+  h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:400;line-height:1;
+    letter-spacing:-.025em;text-transform:uppercase}
+  ul{margin:0;padding:0;list-style:none}
+  .env{width:min(1180px,92vw);margin-inline:auto}
+  section{padding-block:92px}
+  /* El foco del teclado tiene que verse igual de duro que el resto de la página:
+     en un layout monocromo el outline por default del navegador desaparece. */
+  a:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+
+  .kicker{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--gris-cl);margin-bottom:20px;display:flex;
+    align-items:center;gap:12px}
+  .kicker::before{content:"";width:34px;height:2px;background:var(--tinta);flex:none}
+  .kicker.claro{color:rgba(255,255,255,.62)}
+  .kicker.claro::before{background:#fff}
+  .h2{font-size:clamp(30px,4.6vw,54px)}
+  .lead{margin-top:20px;font-size:18px;color:var(--gris);max-width:56ch}
+  .lead.claro{color:rgba(255,255,255,.76)}
+
+  /* ---------- botones: esquinas duras, todo mayúsculas ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 26px;text-decoration:none;font-weight:700;font-size:13px;
+    letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--tinta);
+    background:var(--tinta);color:#fff;transition:background .14s ease,color .14s ease}
+  .btn:hover{background:#fff;color:var(--tinta)}
+  .btn svg{flex:none;width:17px;height:17px;fill:currentColor}
+  .btn-linea{background:transparent;color:var(--tinta)}
+  .btn-linea:hover{background:var(--tinta);color:#fff}
+  .btn-inv{background:#fff;color:var(--tinta);border-color:#fff}
+  .btn-inv:hover{background:transparent;color:#fff}
+  .btn-inv-linea{background:transparent;color:#fff;border-color:#fff}
+  .btn-inv-linea:hover{background:#fff;color:var(--tinta)}
+
+  /* ---------- cinta superior ---------- */
+  .cinta{background:var(--tinta);color:#fff}
+  .cinta .env{display:flex;flex-wrap:wrap;gap:6px 26px;align-items:center;justify-content:center;
+    min-height:40px;padding-block:9px;font-size:11.5px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;text-align:center}
+  .cinta a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45)}
+  .cinta a:hover{border-bottom-color:#fff}
+  .cinta i{width:4px;height:4px;background:#fff;display:block;flex:none}
+
+  /* ---------- cabecera ---------- */
+  .top{position:sticky;top:0;z-index:40;background:var(--papel);border-bottom:2px solid var(--tinta)}
+  .top .env{display:flex;align-items:center;gap:28px;min-height:80px}
+  .marca{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+  .marca img{width:46px;height:46px;object-fit:cover;border:2px solid var(--tinta)}
+  .marca b{display:block;font-family:var(--display);font-size:17px;letter-spacing:.01em;line-height:1}
+  .marca small{display:block;font-size:9.5px;letter-spacing:.24em;color:var(--gris-cl);
+    font-weight:700;text-transform:uppercase;margin-top:5px}
+  .nav{margin-left:auto;display:flex;gap:32px;align-items:center}
+  .nav a{text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;white-space:nowrap;padding-block:6px;
+    border-bottom:2px solid transparent}
+  .nav a:hover{border-bottom-color:var(--tinta)}
+  .top .btn{padding:13px 20px;font-size:12px}
+  .top .marca+.btn{margin-left:auto}
+
+  /* ---------- portada tipográfica ---------- */
+  .hero{padding-block:86px 76px}
+  .hero h1{font-size:clamp(44px,9.4vw,112px);line-height:.9;letter-spacing:-.035em}
+  .hero h1 span{background:var(--tinta);color:#fff;display:inline-block;padding:0 .1em .06em}
+  .hero .lead{font-size:20px;max-width:44ch;margin-top:28px}
+  .acciones{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
+  .datos{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:2px solid var(--tinta)}
+  .datos div{padding:26px 26px 26px 0;border-right:1px solid var(--linea)}
+  .datos div:last-child{border-right:0}
+  .datos strong{display:block;font-family:var(--display);font-size:clamp(24px,2.7vw,34px);
+    letter-spacing:-.02em;text-transform:uppercase}
+  .datos span{display:block;margin-top:8px;font-size:13.5px;color:var(--gris);line-height:1.45}
+
+  /* ---------- marquesina ---------- */
+  .tira{background:var(--tinta);color:#fff;overflow:hidden;padding-block:15px}
+  .tira-pista{display:flex;width:max-content;align-items:center;
+    animation:corre 40s linear infinite}
+  .tira-pista span{font-family:var(--display);font-size:15px;letter-spacing:.06em;
+    text-transform:uppercase;padding-inline:24px;white-space:nowrap}
+  .tira-pista i{width:7px;height:7px;background:#fff;flex:none;transform:rotate(45deg)}
+  @keyframes corre{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){.tira-pista{animation:none}}
+
+  /* ---------- marcas ---------- */
+  .cabecera{display:grid;grid-template-columns:1.22fr .78fr;gap:52px;align-items:end}
+  /* 6 marcas en 3 columnas: la fila queda pareja y ninguna celda cuelga sola.
+     Los bordes se dibujan por celda y se apagan en la última columna y la última
+     fila, porque el contenedor ya trae su propio borde de 2px. */
+  .rejilla-marcas{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);
+    border:2px solid var(--tinta)}
+  .rejilla-marcas div{padding:34px 26px;border-right:2px solid var(--tinta);
+    border-bottom:2px solid var(--tinta)}
+  .rejilla-marcas div:nth-child(3n){border-right:0}
+  .rejilla-marcas div:nth-last-child(-n+3){border-bottom:0}
+  .rejilla-marcas b{display:block;font-family:var(--display);font-size:clamp(19px,2.2vw,27px);
+    letter-spacing:-.02em;text-transform:uppercase}
+  .rejilla-marcas small{display:block;margin-top:10px;font-size:11px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--gris-cl)}
+  .pie-marcas{margin-top:18px;font-size:14px;font-weight:600;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gris-cl)}
+  /* Las fotos son frames de reel de 360 px de ancho: si la columna crece más que eso
+     el navegador las escala hacia arriba y se ven pixeladas. Por eso van capadas. */
+  .duo-foto{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,352px));
+    gap:26px;justify-content:start}
+  figure{margin:0}
+  .foto{border:2px solid var(--tinta)}
+  .foto img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 25%}
+  .foto.alto img{aspect-ratio:3/4;object-position:50% 8%}
+  .foto.arriba img{object-position:50% 0}
+  figcaption{border-top:2px solid var(--tinta);padding:14px 18px;font-size:12px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase}
+
+  /* ---------- catálogo ---------- */
+  .catalogo{background:var(--hueso)}
+  .rejilla{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .pieza{background:var(--papel);border:2px solid var(--tinta);display:flex;flex-direction:column}
+  .pieza img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 8%;
+    border-bottom:2px solid var(--tinta)}
+  .pieza .cuerpo{padding:24px 22px 22px;display:flex;flex-direction:column;flex:1}
+  .pieza .num{font-size:11px;font-weight:700;letter-spacing:.24em;color:var(--gris-cl);
+    text-transform:uppercase}
+  .pieza h3{margin-top:12px;font-size:21px;letter-spacing:-.02em}
+  .pieza p{margin-top:12px;font-size:14.5px;color:var(--gris);line-height:1.55}
+  .pieza .cierre{margin-top:auto;padding-top:20px;font-size:11.5px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
+    display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+    border-bottom:2px solid var(--tinta);padding-bottom:3px}
+  .pieza.negra{background:var(--tinta);color:#fff;justify-content:space-between}
+  .pieza.negra .cuerpo{padding:32px 26px}
+  .pieza.negra .num{color:rgba(255,255,255,.6)}
+  .pieza.negra h3{font-size:clamp(26px,3.2vw,40px)}
+  .pieza.negra p{font-size:15.5px}
+  .pieza.negra p{color:rgba(255,255,255,.78)}
+  .pieza.negra .cierre{border-bottom-color:#fff}
+
+  /* ---------- drops ---------- */
+
+  /* ---------- bloque negro (HATUNPAQ) ---------- */
+  .negro{background:var(--tinta);color:#fff}
+  .negro .h2{font-size:clamp(44px,9vw,104px);letter-spacing:-.04em}
+  .negro .tag{margin-top:22px;font-family:var(--display);font-size:clamp(17px,2.1vw,24px);
+    text-transform:uppercase;letter-spacing:-.01em;color:#fff}
+  .negro .acciones{margin-top:38px}
+  .marco{margin-top:56px;border-top:1px solid rgba(255,255,255,.28);
+    display:grid;grid-template-columns:repeat(3,1fr)}
+  .marco div{padding:28px 26px 0 0;border-right:1px solid rgba(255,255,255,.28)}
+  .marco div:last-child{border-right:0}
+  .marco b{display:block;font-family:var(--display);font-size:15px;text-transform:uppercase;
+    letter-spacing:.02em}
+  .marco span{display:block;margin-top:9px;font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.5}
+
+  /* ---------- pasos ---------- */
+  .par{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+  .pasos{margin-top:44px;border-top:2px solid var(--tinta)}
+  .paso{display:grid;grid-template-columns:78px 1fr;gap:22px;padding-block:26px;
+    border-bottom:1px solid var(--linea)}
+  .paso:last-child{border-bottom:2px solid var(--tinta)}
+  .paso b{font-family:var(--display);font-size:34px;letter-spacing:-.03em;line-height:1}
+  .paso h3{font-size:19px;letter-spacing:-.01em}
+  .paso p{margin-top:9px;font-size:15px;color:var(--gris)}
+
+  /* ---------- tienda ---------- */
+  .tienda{background:var(--hueso)}
+  .tienda .par{grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
+  .caja{background:var(--papel);border:2px solid var(--tinta);padding:38px 34px;
+    display:flex;flex-direction:column}
+  .caja h3{font-size:clamp(28px,3.6vw,42px);letter-spacing:-.03em}
+  .caja p{margin-top:16px;font-size:15.5px;color:var(--gris)}
+  .caja .btn{margin-top:auto;align-self:flex-start}
+  .caja p+.btn{margin-top:28px}
+
+  /* ---------- comunidad ---------- */
+  .canales{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .canal{border:2px solid var(--tinta);padding:30px 26px;text-decoration:none;
+    display:flex;flex-direction:column;min-height:196px;
+    transition:background .14s ease,color .14s ease}
+  .canal:hover{background:var(--tinta);color:#fff}
+  .canal:hover .canal-num,.canal:hover p{color:rgba(255,255,255,.75)}
+  .canal .canal-tit{font-family:var(--display);font-size:20px;text-transform:uppercase;
+    letter-spacing:-.01em;display:flex;justify-content:space-between;gap:12px;align-items:center}
+  .canal .canal-num{margin-top:14px;font-size:11.5px;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--gris-cl)}
+  .canal p{margin-top:auto;padding-top:22px;font-size:14.5px;color:var(--gris);line-height:1.5}
+
+  /* ---------- pie ---------- */
+  footer{background:var(--tinta);color:#fff;padding-block:56px 44px}
+  footer .env{display:flex;flex-wrap:wrap;gap:34px;justify-content:space-between;align-items:flex-start}
+  footer .marca img{border-color:#fff}
+  footer .marca small{color:rgba(255,255,255,.6)}
+  footer .donde{margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.72);max-width:34ch}
+  .enlaces{display:flex;flex-wrap:wrap;gap:12px 30px}
+  .enlaces a{text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:3px}
+  .enlaces a:hover{border-bottom-color:#fff}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    /* Con la nav oculta, `.marca + .btn` deja de matchear (el <nav> sigue en el DOM):
+       el botón se empasta contra el logo. Se empuja por el botón directamente. */
+    .nav{display:none}
+    .top .btn{margin-left:auto}
+    .cabecera{grid-template-columns:1fr;gap:26px;align-items:start}
+    /* A 2 columnas cambian de lugar la última columna y la última fila: hay que
+       devolver los bordes que apagó la regla de 3 columnas antes de apagar los
+       que corresponden acá (misma especificidad, gana la última declarada). */
+    .rejilla-marcas{grid-template-columns:1fr 1fr}
+    .rejilla-marcas div:nth-child(3n){border-right:2px solid var(--tinta)}
+    .rejilla-marcas div:nth-last-child(-n+3){border-bottom:2px solid var(--tinta)}
+    .rejilla-marcas div:nth-child(2n){border-right:0}
+    .rejilla-marcas div:nth-last-child(-n+2){border-bottom:0}
+    .rejilla{grid-template-columns:1fr 1fr}
+    .par{grid-template-columns:1fr;gap:38px}
+    .tienda .par{grid-template-columns:1fr}
+    .canales{grid-template-columns:1fr}
+    .marco{grid-template-columns:1fr}
+    .marco div{border-right:0;border-bottom:1px solid rgba(255,255,255,.28);padding:22px 0}
+    .marco div:last-child{border-bottom:0}
+  }
+  @media (max-width:640px){
+    body{font-size:16px}
+    section{padding-block:58px}
+    .hero{padding-block:48px 44px}
+    .hero .lead{font-size:17px;margin-top:22px}
+    .acciones{gap:12px}
+    .acciones .btn{flex:1 1 100%}
+    .datos{margin-top:40px;grid-template-columns:1fr}
+    .datos div{padding:20px 0;border-right:0;border-bottom:1px solid var(--linea)}
+    .datos div:last-child{border-bottom:0}
+    .cinta .env{gap:2px 14px;font-size:10.5px;letter-spacing:.08em;
+      line-height:1.5;padding-block:7px;min-height:0}
+    .cinta i{display:none}
+    .top .env{min-height:66px;gap:12px}
+    .marca img{width:40px;height:40px}
+    .marca b{font-size:15px}
+    .top .btn{padding:11px 14px;letter-spacing:.06em}
+    .top .btn span{display:none}
+    .duo-foto{grid-template-columns:1fr;gap:20px}
+    .drops .duo-foto{grid-template-columns:1fr}
+    .rejilla{grid-template-columns:1fr;gap:20px}
+    .paso{grid-template-columns:56px 1fr;gap:14px}
+    .paso b{font-size:26px}
+    .caja{padding:30px 24px}
+    .lead{font-size:16.5px}
+    .tira-pista span{font-size:13px;padding-inline:16px}
+  }
+</style>
+</head>
+<body>
+
+<div class="cinta">
+  <div class="env">
+    <span>Envíos a todo el Perú</span>
+    <i aria-hidden="true"></i>
+    <span>Tienda física en Miraflores, Lima</span>
+    <i aria-hidden="true"></i>
+    <span>WhatsApp <a href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">907 999 685</a></span>
+  </div>
+</div>
+
+<header class="top">
+  <div class="env">
+    <a class="marca" href="#inicio">
+      <img src="assets/logo.jpg" width="46" height="46" alt="Logo de YOUNGSHARK: monograma YS con la S en forma de aleta de tiburón">
+      <span>
+        <b>YOUNGSHARK</b>
+        <small>Tienda de ropa</small>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="#marcas">Marcas</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#hatunpaq">HATUNPAQ</a>
+      <a href="#tienda">Tienda</a>
+    </nav>
+    <a class="btn" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.49"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- ---------- portada ---------- -->
+  <section class="hero">
+    <div class="env">
+      <p class="kicker">Importado desde USA · Miraflores, Lima</p>
+      <h1>Ropa importada<br><span>desde USA</span></h1>
+      <p class="lead">+400 prendas para entrega inmediata. Tienda física en Miraflores, Lima y envíos a todo el Perú.</p>
+      <div class="acciones">
+        <a class="btn" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.49"/></svg>
+          <span>Pedir catálogo por WhatsApp</span>
+        </a>
+        <a class="btn btn-linea" href="#asistente">Pregúntale al asistente</a>
+      </div>
+      <div class="datos">
+        <div>
+          <strong>+400 prendas</strong>
+          <span>Para entrega inmediata</span>
+        </div>
+        <div>
+          <strong>Miraflores</strong>
+          <span>Tienda física en Lima</span>
+        </div>
+        <div>
+          <strong>Todo el Perú</strong>
+          <span>Hacemos envíos a nivel nacional</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- marquesina con sus frases ---------- -->
+  <div class="tira" aria-hidden="true">
+    <div class="tira-pista">
+      <span>+400 prendas para entrega inmediata</span><i></i>
+      <span>Ropa importada desde USA</span><i></i>
+      <span>Unidades súper limitadas</span><i></i>
+      <span>Envíos a todo el Perú</span><i></i>
+      <span>Tienda física en Miraflores, Lima</span><i></i>
+      <span>+400 prendas para entrega inmediata</span><i></i>
+      <span>Ropa importada desde USA</span><i></i>
+      <span>Unidades súper limitadas</span><i></i>
+      <span>Envíos a todo el Perú</span><i></i>
+      <span>Tienda física en Miraflores, Lima</span><i></i>
+    </div>
+  </div>
+
+  <!-- ---------- marcas ---------- -->
+  <section id="marcas">
+    <div class="env">
+      <div class="cabecera">
+        <div>
+          <p class="kicker">Las marcas</p>
+          <h2 class="h2">Las marcas que<br>traemos de USA</h2>
+        </div>
+        <p class="lead">Traemos las prendas directamente desde USA. YoungLA es nuestra insignia y llega en cada importación; también trabajamos Gymshark, Devant, Belcast, Breathe Divinity y Darc Sport.</p>
+      </div>
+
+      <div class="rejilla-marcas">
+        <div><b>YoungLA</b><small>La insignia</small></div>
+        <div><b>Gymshark</b><small>Gymwear</small></div>
+        <div><b>Devant</b><small>Entrega inmediata</small></div>
+        <div><b>Belcast</b><small>Conjuntos</small></div>
+        <div><b>Breathe Divinity</b><small>Compresión premium</small></div>
+        <div><b>Darc Sport</b><small>Colab Naruto</small></div>
+      </div>
+      <p class="pie-marcas">Y más drops importados</p>
+
+      <div class="duo-foto">
+        <figure class="foto">
+          <img src="assets/tienda-cajas-youngla.jpg" width="361" height="640" loading="lazy" alt="Cajas de envío de YoungLA apiladas en la tienda con prendas recién llegadas, todavía embolsadas">
+          <figcaption>Mercadería YoungLA recién llegada</figcaption>
+        </figure>
+        <figure class="foto arriba">
+          <img src="assets/conjunto-gymshark.jpg" width="518" height="640" loading="lazy" alt="Maniquí con polo manga larga Gymshark morado y jogger gris con el logo Gymshark impreso">
+          <figcaption>Conjunto Gymshark en tienda</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- catálogo ---------- -->
+  <section id="catalogo" class="catalogo">
+    <div class="env">
+      <div class="cabecera">
+        <div>
+          <p class="kicker">El catálogo</p>
+          <h2 class="h2">+400 prendas para<br>entrega inmediata</h2>
+        </div>
+        <p class="lead">Esto es una muestra de lo que se mueve en tienda. El stock cambia con cada importación: pregúntale al asistente qué hay disponible hoy o pídenos el catálogo completo por WhatsApp.</p>
+      </div>
+
+      <div class="rejilla">
+        <article class="pieza">
+          <img src="assets/hoodie-chenille.jpg" width="360" height="640" loading="lazy" alt="Hoodie gris lavado con un parche de chenille en relieve con lettering gótico en la espalda">
+          <div class="cuerpo">
+            <p class="num">01 — Poleras</p>
+            <h3>Poleras y hoodies</h3>
+            <p>Hoodies y poleras importadas: parches de chenille, lavados y modelos half-zip.</p>
+            <a class="cierre" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">Consulta disponibilidad</a>
+          </div>
+        </article>
+
+        <article class="pieza">
+          <img src="assets/cargo-convertible.jpg" width="360" height="640" loading="lazy" alt="Pantalón cargo convertible con estampado camuflado que se desprende para convertirse en short">
+          <div class="cuerpo">
+            <p class="num">02 — Pantalones</p>
+            <h3>Pantalones y joggers</h3>
+            <p>Joggers, jeans y el cargo convertible: 2 prendas en 1, jean y short al mismo tiempo.</p>
+            <a class="cierre" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">Consulta disponibilidad</a>
+          </div>
+        </article>
+
+        <article class="pieza">
+          <img src="assets/polos-amatista.jpg" width="360" height="640" loading="lazy" alt="Polos color amatista doblados sobre una mesa dentro de la tienda">
+          <div class="cuerpo">
+            <p class="num">03 — Camisetas</p>
+            <h3>Camisetas y polos</h3>
+            <p>Camisetas y polos manga corta y manga larga, en varios colorways.</p>
+            <a class="cierre" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">Consulta disponibilidad</a>
+          </div>
+        </article>
+
+        <article class="pieza">
+          <img src="assets/conjunto-casaca-pantalon.jpg" width="360" height="640" loading="lazy" alt="Conjunto de casaca y pantalón gris con líneas rojas mostrado dentro de la tienda, junto a los racks de ropa">
+          <div class="cuerpo">
+            <p class="num">04 — Conjuntos</p>
+            <h3>Conjuntos</h3>
+            <p>Conjuntos completos de casaca y pantalón, listos para llevar.</p>
+            <a class="cierre" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">Consulta disponibilidad</a>
+          </div>
+        </article>
+
+        <article class="pieza negra">
+          <div class="cuerpo">
+            <p class="num">05 — Liquidación</p>
+            <h3>Liquidación</h3>
+            <p>Prendas seleccionadas en unidades súper limitadas. Cuando se acaban, se acaban: pregunta qué queda hoy.</p>
+            <a class="cierre" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">Consulta disponibilidad</a>
+          </div>
+        </article>
+
+        <article class="pieza negra">
+          <div class="cuerpo">
+            <p class="num">06 — ¿Algo puntual?</p>
+            <h3>Dinos qué buscas</h3>
+            <p>Dinos la marca, el modelo o el color que tienes en mente y te decimos si lo tenemos disponible.</p>
+            <a class="cierre" href="#asistente">Pregúntale al asistente</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- drops con licencia ---------- -->
+  <section class="drops">
+    <div class="env">
+      <div class="cabecera">
+        <div>
+          <p class="kicker">Drops con licencia</p>
+          <h2 class="h2">Los drops con<br>licencia, en Perú</h2>
+        </div>
+        <p class="lead">Superman, Batman y Demon Slayer son drops oficiales de YoungLA; la colección de Naruto Shippuden es la colaboración de Darc Sport. Todos llegan en unidades súper limitadas.</p>
+      </div>
+
+      <div class="duo-foto">
+        <figure class="foto alto">
+          <img src="assets/drop-superman.jpg" width="360" height="640" loading="lazy" alt="Hoodie azul del drop YoungLA x Superman con el escudo en el pecho, entre cajas de YoungLA">
+          <figcaption>YoungLA × Superman</figcaption>
+        </figure>
+        <figure class="foto alto">
+          <img src="assets/drop-nezuko.jpg" width="360" height="640" loading="lazy" alt="Half-zip negro lavado de YoungLA con bordado de la marca y un parche de Nezuko de Demon Slayer">
+          <figcaption>YoungLA × Demon Slayer</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- marca propia ---------- -->
+  <section id="hatunpaq" class="negro">
+    <div class="env">
+      <p class="kicker claro">Marca propia</p>
+      <h2 class="h2">HATUNPAQ</h2>
+      <p class="tag">Streetwear peruano. Hecho para la grandeza.</p>
+      <p class="lead claro">Nuestra marca propia rinde homenaje a nuestra cultura. El primer drop está inspirado en Illapa, el dios inca del rayo: las Illapa Wallqa Tees, las Illapa Waqchaq Tees y el Uma Tullu Baggy Jogger.</p>
+      <div class="acciones">
+        <a class="btn btn-inv" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.49"/></svg>
+          <span>Pregunta por HATUNPAQ</span>
+        </a>
+        <a class="btn btn-inv-linea" href="https://www.instagram.com/hatunpaq/" target="_blank" rel="noopener noreferrer">Ver @hatunpaq</a>
+      </div>
+
+      <div class="marco">
+        <div>
+          <b>Colección Illapa</b>
+          <span>Inspirada en el dios inca del rayo. Tees boxy y joggers baggy, todos en tallas S, M y L.</span>
+        </div>
+        <div>
+          <b>Showroom en Miraflores</b>
+          <span>La misma tienda donde atendemos a YOUNGSHARK.</span>
+        </div>
+        <div>
+          <b>Envíos a todo el Perú</b>
+          <span>Igual que el resto del catálogo.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- cómo comprar ---------- -->
+  <section id="asistente">
+    <div class="env">
+      <div class="par">
+        <div>
+          <p class="kicker">Cómo comprar</p>
+          <h2 class="h2">Consigue tu prenda<br>favorita en 4 pasos</h2>
+
+          <div class="pasos">
+            <div class="paso">
+              <b>01</b>
+              <div>
+                <h3>Mira los drops</h3>
+                <p>En Instagram, en TikTok o aquí mismo. Publicamos cada llegada de mercadería.</p>
+              </div>
+            </div>
+            <div class="paso">
+              <b>02</b>
+              <div>
+                <h3>Pregúntale al asistente</h3>
+                <p>Abre el chat de la esquina y pregúntale qué hay disponible, de qué marca o de qué categoría. Te responde a cualquier hora.</p>
+              </div>
+            </div>
+            <div class="paso">
+              <b>03</b>
+              <div>
+                <h3>Recibe el catálogo y confirma</h3>
+                <p>Escríbenos al WhatsApp 907 999 685: te pasamos el catálogo y confirmamos tu pedido por ahí mismo.</p>
+              </div>
+            </div>
+            <div class="paso">
+              <b>04</b>
+              <div>
+                <h3>Recoge o recibe tu envío</h3>
+                <p>Recoge en nuestra tienda de Miraflores o recibe tu pedido en cualquier parte del Perú.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="foto alto">
+          <img src="assets/proceso-4-pasos.jpg" width="360" height="640" loading="lazy" alt="El equipo de YOUNGSHARK dentro de la tienda, con un conjunto YoungLA negro, explicando los 4 pasos para comprar">
+          <figcaption>Así compras en YOUNGSHARK</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- tienda física ---------- -->
+  <section id="tienda" class="tienda">
+    <div class="env">
+      <p class="kicker">Dónde estamos</p>
+      <h2 class="h2">Ven a la tienda<br>o pide tu envío</h2>
+
+      <div class="par" style="margin-top:44px">
+        <div class="caja">
+          <h3>Miraflores, Lima</h3>
+          <p>Tenemos tienda física: puedes venir a ver las prendas antes de llevártelas. Escríbenos al WhatsApp y te pasamos la ubicación exacta.</p>
+          <a class="btn" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.463 3.49"/></svg>
+            <span>Pedir la ubicación</span>
+          </a>
+        </div>
+        <div class="caja">
+          <h3>Envíos a todo el Perú</h3>
+          <p>¿No estás en Lima? Hacemos envíos a todo el país. Escríbenos y coordinamos tu pedido por WhatsApp.</p>
+          <a class="btn btn-linea" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">Coordinar mi envío</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- comunidad ---------- -->
+  <section>
+    <div class="env">
+      <div class="cabecera">
+        <div>
+          <p class="kicker">Comunidad</p>
+          <h2 class="h2">Entérate de<br>cada drop</h2>
+        </div>
+        <p class="lead">Publicamos cada llegada de mercadería en Instagram y TikTok, y avisamos primero en nuestro grupo de WhatsApp.</p>
+      </div>
+
+      <div class="canales">
+        <a class="canal" href="https://www.instagram.com/youngsharkperu/" target="_blank" rel="noopener noreferrer">
+          <span class="canal-tit">Instagram <span aria-hidden="true">↗</span></span>
+          <span class="canal-num">13.3 K seguidores</span>
+          <p>@youngsharkperu — drops, llegadas y lo que entra a tienda cada semana.</p>
+        </a>
+        <a class="canal" href="https://www.tiktok.com/@youngsharkperu" target="_blank" rel="noopener noreferrer">
+          <span class="canal-tit">TikTok <span aria-hidden="true">↗</span></span>
+          <span class="canal-num">11.3 K seguidores</span>
+          <p>@youngsharkperu — las prendas en video, directo desde la tienda.</p>
+        </a>
+        <a class="canal" href="https://wa.me/51907999685" target="_blank" rel="noopener noreferrer">
+          <span class="canal-tit">Grupo de WhatsApp <span aria-hidden="true">↗</span></span>
+          <span class="canal-num">907 999 685</span>
+          <p>Ahí avisamos cada drop primero. Escríbenos y te pasamos el link del grupo.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="env">
+    <div>
+      <span class="marca">
+        <img src="assets/logo.jpg" width="46" height="46" loading="lazy" alt="Logo de YOUNGSHARK">
+        <span>
+          <b>YOUNGSHARK</b>
+          <small>Tienda de ropa</small>
+        </span>
+      </span>
+      <p class="donde">Tienda física en Miraflores, Lima · Envíos a todo el Perú</p>
+    </div>
+    <div class="enlaces">
+      <a href="https://www.instagram.com/youngsharkperu/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.tiktok.com/@youngsharkperu" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <a href="/politica-privacidad">Política de privacidad</a>
+    </div>
+  </div>
+</footer>
+
+  <div data-ijv-demo-badge style="position:relative;z-index:1;padding:14px 16px 90px;text-align:center;font:400 12px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#94a3b8;background:#0f172a">
+    Demo preparada por <a href="https://ijvagency.com/" target="_blank" rel="noopener noreferrer" style="color:#cbd5e1;text-decoration:underline">IJV Agency</a> para YOUNGSHARK — sitio de muestra, no es la web oficial.
+  </div>
+  <script>
+window["youngsharkAgentConfig"] = Object.assign(window["youngsharkAgentConfig"] || {}, { webhook: "https://meta.ijvagency.com/webhook/youngshark-demo-agent", leadsWebhook: "https://meta.ijvagency.com/webhook/youngshark-demo-leads" });
+/* ============================================================================
+ * YOUNGSHARK — Widget de chat embebible (IJV Agency)
+ * ----------------------------------------------------------------------------
+ * Generado por IJV Factory — NO editar a mano: cambios van al factory.config.json
+ * y se regenera. Patrón canónico extraído de mmdent/widget/agent.js.
+ *
+ * Distribución recomendada vía jsDelivr (repo público):
+ *   https://cdn.jsdelivr.net/gh/nachojr2003/youngshark-site@main/widget/agent.js
+ *
+ * Uso en el sitio del cliente:
+ *   <script>
+ *     window.youngsharkAgentConfig = { }; // overrides opcionales — los defaults van embebidos
+ *   <\/script>
+ *   <script src=".../widget/agent.js" defer><\/script>
+ *
+ * Sin dependencias externas. IIFE puro, vanilla JS (ES5).
+ * ============================================================================ */
+(function () {
+  'use strict';
+
+  /* ---------------- Config con DEFAULTS embebidos (regla #11: si el
+   * integrador pasa config parcial, NADA queda undefined) ---------------- */
+  var DEFAULTS = {
+    n8nBase:        "https://meta.ijvagency.com",
+    webhook:        null,
+    leadsWebhook:   null,
+    privacyUrl:     '/politica-privacidad',
+    logoUrl:        "https://youngshark-demo.vercel.app/assets/logo.jpg",
+    primary:        '#000000',
+    secondary:      '#1F2937',
+    accent:         '#F5F5F5',
+    fontFamily:     "Archivo,system-ui,-apple-system,'Segoe UI',sans-serif,'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji'",
+    timeoutMs:      45000,   /* >= 30s: queries con RAG completo cortan a 15s (regla #10).
+                              * 45000 y no 40000: la espera real que ve el usuario es
+                              * timeoutMs × (1 + maxRetries), así que el knob que importa
+                              * es maxRetries. Un turno vivo nunca llega a 40s (RAG p99
+                              * ~10s + self-call del retry-on-empty ~5s, regla #84): entre
+                              * 40 y 45 solo cambia cuánto tarda en rendirse lo ya muerto. */
+    maxRetries:     1,
+    typewriter:     true,
+    typewriterCps:  90,
+    agentName:      "el asistente de YOUNGSHARK",
+    clientName:     "YOUNGSHARK",
+    /* Subtítulo del encabezado: dice a QUÉ ATIENDE el agente, nunca qué es. Una
+     * etiqueta de bot aquí lo delata antes de que escriba una palabra (regla
+     * #114). Se personaliza con `agente.subtitulo_widget` en el config. */
+    headerSubtitle: "Atención al cliente",
+
+
+    welcomeMessage: "Hola, soy el asistente de YOUNGSHARK. Te atiendo a cualquier hora, todos los días.\n\nTrabajamos **ropa importada desde USA** — YoungLA, Gymshark, Breathe Divinity y Darc Sport — y también **HATUNPAQ**, nuestra marca propia peruana. Tienda física en Miraflores, Lima y envíos a todo el Perú.\n\nAhora tengo el **catálogo con los precios al día**: pregúntame cuánto está la prenda que te gustó y te lo digo al toque.\n\n¿Qué andas buscando: camisetas, poleras, pantalones, liquidación o HATUNPAQ?"
+  };
+  var CFG = window.youngsharkAgentConfig = window.youngsharkAgentConfig || {};
+  for (var k in DEFAULTS) { if (CFG[k] === undefined || CFG[k] === null) CFG[k] = DEFAULTS[k]; }
+  if (!CFG.webhook)      CFG.webhook      = CFG.n8nBase + '/webhook/youngshark-agent';
+  if (!CFG.leadsWebhook) CFG.leadsWebhook = CFG.n8nBase + '/webhook/youngshark-leads';
+
+  var QUICK_BUTTONS = [];
+
+  /* ---------------- Utilidades ---------------- */
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function parseMd(text) {
+    var s = escapeHtml(text);
+    s = s.replace(/```([\s\S]*?)```/g, function (_, c) { return '<pre>' + c + '</pre>'; });
+    s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+    s = s.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    s = s.replace(/(^|\s)(https?:\/\/[^\s<]+)/g,
+      '$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+    s = s.replace(/(^|\n)- (.+)/g, '$1<li>$2</li>');
+    s = s.replace(/(<li>[\s\S]*?<\/li>)(?!\s*<li>)/g, '<ul>$1</ul>');
+    /* Regla #27: strip de placeholders alucinados por el LLM.
+       Restringido a placeholders CONOCIDOS: un strip genérico \[[a-z_]+\]
+       borraba texto legítimo entre corchetes (ej. "[PDF]", "[borrador]"). */
+    s = s.replace(/\{\{[^}]+\}\}/g, '').replace(/\{first_name\}/gi, '')
+      .replace(/\[(nombre|name|first_name|usuario|user)\]/gi, '');
+    /* Segunda capa: MARCAS INTERNAS del sistema. El nodo Finalize del workflow ya
+       las strippea; esto es la red por si un turno las deja pasar — el usuario
+       jamás debe leer "[CONSENT_OK]" ni "[PENDIENTE CLIENTE: precio]".
+       Lista EXPLÍCITA a propósito: un \[[A-Z_]{3,}\] genérico borraría texto
+       legítimo del negocio ("[PDF]", "[IVA]", "[RUC]") — misma lección que el
+       strip de placeholders de arriba (regla #27). Marca nueva en un workflow
+       ⇒ agregarla también aquí. */
+    s = s.replace(/\[\/?(CONSENT_OK|CONSENT|HANDOFF|ESCALATED|ESCALAR|LEAD_OK|NO_KB|IMG:[^\]]*|PENDIENTE[^\]]*)\]/gi, '');
+    s = s.replace(/\n{2,}/g, '</p><p>').replace(/\n/g, '<br>');
+    return '<p>' + s + '</p>';
+  }
+  function uuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+
+  /* Regla #61: TTL de inactividad — Cmd+Shift+R NO limpia sessionStorage; sin
+   * TTL la Simple Memory del agente arrastra la conversación vieja. */
+  var SESSION_TTL_MS = 30 * 60 * 1000;
+  var SS_PREFIX = 'youngshark_';
+  function getSessionId() {
+    var s = sessionStorage.getItem(SS_PREFIX + 'session_id');
+    var last = parseInt(sessionStorage.getItem(SS_PREFIX + 'session_last') || '0', 10);
+    var now = Date.now();
+    if (!s || (last && (now - last) > SESSION_TTL_MS)) {
+      s = uuid();
+      sessionStorage.setItem(SS_PREFIX + 'session_id', s);
+      sessionStorage.removeItem(SS_PREFIX + 'messages');
+    }
+    sessionStorage.setItem(SS_PREFIX + 'session_last', String(now));
+    return s;
+  }
+  function resetSession() {
+    sessionStorage.removeItem(SS_PREFIX + 'session_id');
+    sessionStorage.removeItem(SS_PREFIX + 'session_last');
+    sessionStorage.removeItem(SS_PREFIX + 'messages');
+    return getSessionId();
+  }
+
+  /* Persistencia de mensajes: sobreviven al refresh, no al cerrar la pestaña */
+  function loadMessages() {
+    try { return JSON.parse(sessionStorage.getItem(SS_PREFIX + 'messages') || '[]'); }
+    catch (e) { return []; }
+  }
+  function saveMessage(role, text) {
+    try {
+      var m = loadMessages();
+      m.push({ role: role, text: text });
+      if (m.length > 60) m = m.slice(-60);
+      sessionStorage.setItem(SS_PREFIX + 'messages', JSON.stringify(m));
+    } catch (e) { /* quota: silencioso */ }
+  }
+
+  /* ---------------- CSS inyectado ----------------
+   * Regla #15: CSS defensivo para <img> (librerías emoji del sitio convierten
+   * unicode a <img>; sin esto un 👋 sale de 600px) + fuentes emoji en la pila. */
+  var CSS = [
+    ':root{--ijv-primary:' + CFG.primary + ';--ijv-secondary:' + CFG.secondary + ';--ijv-accent:' + CFG.accent + ';}',
+    '.ijv-launcher{position:fixed;bottom:22px;right:22px;height:60px;padding:0 22px;border-radius:30px;background:#fff;color:var(--ijv-primary);border:0;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;z-index:2147483000;transition:transform .2s ease}',
+    '.ijv-launcher:hover{transform:scale(1.05)}',
+    '.ijv-launcher img{height:36px;width:auto;display:block;object-fit:contain}',
+    '.ijv-root *,.ijv-root *::before,.ijv-root *::after{box-sizing:border-box}',
+    '.ijv-root{position:fixed;bottom:100px;right:22px;width:380px;max-width:calc(100vw - 24px);height:600px;max-height:calc(100vh - 120px);background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);display:flex;flex-direction:column;overflow:hidden;z-index:2147483000;font-family:' + CFG.fontFamily + ';color:var(--ijv-secondary);transform:translateY(20px);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .2s ease}',
+    '.ijv-root.ijv-open{transform:translateY(0);opacity:1;pointer-events:auto}',
+    '.ijv-head{background:var(--ijv-primary);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}',
+    '.ijv-head img{height:44px;width:auto;background:#fff;border-radius:10px;padding:6px 10px;flex-shrink:0;display:block}',
+    '.ijv-head .ijv-title{font-weight:700;font-size:15px;line-height:1.2}',
+    '.ijv-head .ijv-sub{font-size:12px;opacity:.85}',
+    '.ijv-head .ijv-actions{margin-left:auto;display:flex;gap:6px}',
+    '.ijv-head button{background:rgba(255,255,255,.15);border:0;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px}',
+    '.ijv-head button:hover{background:rgba(255,255,255,.28)}',
+    '.ijv-msgs{flex:1;overflow-y:auto;padding:16px;background:#FAFAFA;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}',
+    '.ijv-msg{max-width:84%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.45;word-wrap:break-word}',
+    '.ijv-msg p{margin:0 0 6px}.ijv-msg p:last-child{margin:0}',
+    '.ijv-msg ul{margin:4px 0 4px 18px;padding:0}.ijv-msg li{margin:2px 0}',
+    '.ijv-msg a{color:var(--ijv-primary);text-decoration:underline}',
+    '.ijv-msg code{background:rgba(0,0,0,.08);padding:1px 5px;border-radius:4px;font-size:13px}',
+    '.ijv-msg img{max-width:1.2em!important;max-height:1.2em!important;display:inline-block!important;vertical-align:text-bottom!important}',
+    '.ijv-bot{align-self:flex-start;background:#fff;border:1px solid #E8E8E8;border-top-left-radius:4px;color:var(--ijv-secondary)}',
+    '.ijv-user{align-self:flex-end;background:var(--ijv-primary);color:#fff;border-top-right-radius:4px}',
+    '.ijv-user a{color:#fff}',
+    '.ijv-typing{align-self:flex-start;display:flex;gap:4px;padding:10px 14px;background:#fff;border:1px solid #E8E8E8;border-radius:14px;border-top-left-radius:4px}',
+    '.ijv-typing span{width:7px;height:7px;background:var(--ijv-primary);border-radius:50%;opacity:.4;animation:ijvBlink 1.2s infinite}',
+    '.ijv-typing span:nth-child(2){animation-delay:.2s}.ijv-typing span:nth-child(3){animation-delay:.4s}',
+    '@keyframes ijvBlink{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}',
+    '.ijv-cta{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 6px}',
+    '.ijv-pill{background:var(--ijv-accent);color:var(--ijv-primary);border:1px solid rgba(0,0,0,.08);padding:6px 12px;border-radius:999px;font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s;font-family:inherit}',
+    '.ijv-pill:hover{background:var(--ijv-primary);color:#fff;border-color:var(--ijv-primary)}',
+    '.ijv-form{background:#fff;border:1px solid #E8E8E8;border-radius:12px;padding:14px;margin:8px 0;display:flex;flex-direction:column;gap:8px;align-self:stretch}',
+    '.ijv-form h4{margin:0 0 4px;font-size:14px;color:var(--ijv-secondary)}',
+    '.ijv-form input,.ijv-form textarea{width:100%;padding:9px 11px;border:1px solid #D8D8D8;border-radius:8px;font-size:13.5px;font-family:inherit;color:var(--ijv-secondary);background:#fff}',
+    '.ijv-form input:focus,.ijv-form textarea:focus{outline:none;border-color:var(--ijv-primary)}',
+    '.ijv-form button{background:var(--ijv-primary);color:#fff;border:0;padding:10px;border-radius:8px;font-weight:600;cursor:pointer;font-size:13.5px;font-family:inherit}',
+    '.ijv-form button:disabled{opacity:.6;cursor:wait}',
+    '.ijv-form .ijv-hp{display:none!important}',
+    '.ijv-form .ijv-legal{margin:0;font-size:10.5px;line-height:1.45;color:#8a8a8a}',
+    '.ijv-form .ijv-legal a{color:var(--ijv-primary);text-decoration:underline}',
+    '.ijv-cal{background:linear-gradient(135deg,var(--ijv-primary),var(--ijv-secondary));border-radius:12px;padding:16px;margin:8px 0;align-self:stretch;color:#fff}',
+    '.ijv-cal p{margin:0 0 10px;font-size:13.5px;line-height:1.45}',
+    '.ijv-cal a{display:inline-block;background:#fff;color:var(--ijv-primary);font-weight:700;padding:9px 16px;border-radius:8px;text-decoration:none;font-size:13.5px}',
+    '.ijv-input{display:flex;gap:8px;padding:12px;border-top:1px solid #E8E8E8;background:#fff;align-items:flex-end}',
+    '.ijv-input textarea{flex:1;border:1px solid #D8D8D8;border-radius:12px;padding:10px 12px;font-family:inherit;font-size:14px;resize:none;max-height:100px;min-height:40px;color:var(--ijv-secondary)}',
+    '.ijv-input textarea:focus{outline:none;border-color:var(--ijv-primary)}',
+    '.ijv-input button{background:var(--ijv-primary);color:#fff;border:0;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}',
+    '.ijv-input button:disabled{opacity:.5;cursor:not-allowed}',
+    '.ijv-input button svg{width:18px;height:18px;fill:#fff}',
+    '.ijv-foot{padding:8px 12px 10px;background:#fff;border-top:1px solid #E8E8E8;text-align:center;font-size:10.5px;color:#8a8a8a;line-height:1.5}',
+    '.ijv-foot a{color:var(--ijv-primary);text-decoration:none;font-weight:600}',
+    '.ijv-foot a:hover{text-decoration:underline}',
+    '.ijv-foot .ijv-foot-powered{display:block;margin-top:3px;font-size:10px;color:#9a9a9a}',
+    '.ijv-foot .ijv-foot-powered a{color:#9a9a9a;font-weight:500}',
+    '.ijv-toast{position:absolute;top:70px;left:50%;transform:translateX(-50%);background:var(--ijv-secondary);color:#fff;padding:8px 14px;border-radius:8px;font-size:12.5px;opacity:0;transition:opacity .2s;pointer-events:none}',
+    '.ijv-toast.ijv-show{opacity:.95}',
+    '@media (max-width:480px){.ijv-root{width:calc(100vw - 16px);height:calc(100vh - 90px);bottom:80px;right:8px}.ijv-launcher{bottom:16px;right:16px;height:54px;padding:0 18px}.ijv-launcher img{height:32px}}'
+  ].join('');
+
+  /* ---------------- Render de la UI ---------------- */
+  var styleEl = document.createElement('style');
+  styleEl.textContent = CSS;
+  document.head.appendChild(styleEl);
+
+  var launcher = document.createElement('button');
+  launcher.className = 'ijv-launcher';
+  launcher.setAttribute('aria-label', 'Abrir chat ' + CFG.clientName);
+  launcher.innerHTML = '<img src="' + escapeHtml(CFG.logoUrl) + '" alt="' + escapeHtml(CFG.clientName) + '" />';
+  document.body.appendChild(launcher);
+
+  var root = document.createElement('div');
+  root.className = 'ijv-root';
+  root.setAttribute('role', 'dialog');
+  root.setAttribute('aria-label', 'Chat de ' + CFG.clientName);
+  root.innerHTML =
+    '<div class="ijv-head">' +
+      '<img src="' + escapeHtml(CFG.logoUrl) + '" alt="' + escapeHtml(CFG.clientName) + '" />' +
+      '<div>' +
+        '<div class="ijv-title">' + escapeHtml(CFG.clientName) + '</div>' +
+        '<div class="ijv-sub">' + escapeHtml(CFG.agentName) + ' · ' + escapeHtml(CFG.headerSubtitle) + '</div>' +
+      '</div>' +
+      '<div class="ijv-actions">' +
+        '<button type="button" class="ijv-reset" aria-label="Reiniciar conversación" title="Nueva conversación">⟳</button>' +
+        '<button type="button" class="ijv-close" aria-label="Cerrar chat" title="Cerrar">✕</button>' +
+      '</div>' +
+      '<div class="ijv-toast">Conversación reiniciada</div>' +
+    '</div>' +
+    '<div class="ijv-msgs" aria-live="polite" aria-atomic="false"></div>' +
+    '<div class="ijv-input">' +
+      '<textarea rows="1" maxlength="2000" placeholder="Escribe tu mensaje…" aria-label="Escribe tu mensaje"></textarea>' +
+      '<button type="button" class="ijv-send" aria-label="Enviar">' +
+        '<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>' +
+      '</button>' +
+    '</div>' +
+    '<div class="ijv-foot">' +
+      'Al usar este chat aceptas la <a href="' + escapeHtml(CFG.privacyUrl) + '" target="_blank" rel="noopener">política de privacidad</a> de ' + escapeHtml(CFG.clientName) + '.' +
+      '<span class="ijv-foot-powered"><a href="https://ijvagency.com/" target="_blank" rel="noopener">Powered by IJV</a></span>' +
+    '</div>';
+  document.body.appendChild(root);
+
+  /* Logo con fallback: si la URL del logo falla (típico en demos con dominio
+   * ficticio, o si el sitio del cliente mueve el archivo), el launcher cae a un
+   * ícono de chat y el header oculta la imagen rota — nunca se ve un img roto. */
+  var CHAT_ICON = '<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.94 2 11.5c0 2.3 1.13 4.38 2.97 5.88L4 21l4.02-1.6c1.2.38 2.5.6 3.98.6 5.52 0 10-3.94 10-8.5S17.52 3 12 3z"/></svg>';
+  var lImg = launcher.querySelector('img');
+  if (lImg) {
+    var lFallback = function () { launcher.innerHTML = CHAT_ICON; };
+    lImg.onerror = lFallback;
+    if (lImg.complete && lImg.naturalWidth === 0) lFallback();
+  }
+  var hImg = root.querySelector('.ijv-head img');
+  if (hImg) {
+    var hFallback = function () { hImg.style.display = 'none'; };
+    hImg.onerror = hFallback;
+    if (hImg.complete && hImg.naturalWidth === 0) hFallback();
+  }
+
+  var $msgs  = root.querySelector('.ijv-msgs');
+  var $input = root.querySelector('textarea');
+  var $send  = root.querySelector('.ijv-send');
+  var $close = root.querySelector('.ijv-close');
+  var $reset = root.querySelector('.ijv-reset');
+  var $toast = root.querySelector('.ijv-toast');
+
+  var isOpen = false;
+  var isBusy = false;
+  var welcomed = false;
+
+  /* Regla #19: rAF obligatorio — sin él Safari/iOS deja el scroll anclado
+   * arriba mientras el bot escribe. */
+  function scrollToBottom() {
+    $msgs.scrollTop = $msgs.scrollHeight;
+    if (typeof requestAnimationFrame === 'function') {
+      requestAnimationFrame(function () { $msgs.scrollTop = $msgs.scrollHeight; });
+    }
+  }
+  function showToast(t) {
+    $toast.textContent = t;
+    $toast.classList.add('ijv-show');
+    setTimeout(function () { $toast.classList.remove('ijv-show'); }, 1800);
+  }
+  function pushUser(text, opts) {
+    var div = document.createElement('div');
+    div.className = 'ijv-msg ijv-user';
+    div.textContent = text;
+    $msgs.appendChild(div);
+    scrollToBottom();
+    if (!opts || !opts.skipSave) saveMessage('user', text);
+  }
+  function pushBot(text, opts) {
+    opts = opts || {};
+    var div = document.createElement('div');
+    div.className = 'ijv-msg ijv-bot';
+    $msgs.appendChild(div);
+    if (!opts.skipSave) saveMessage('bot', text);
+    if (CFG.typewriter && !opts.instant) {
+      typewrite(div, text);
+    } else {
+      div.innerHTML = parseMd(text);
+      scrollToBottom();
+    }
+    return div;
+  }
+  /* Typewriter: re-parsea markdown en cada step y scrollea con rAF (regla #19) */
+  function typewrite(div, fullText) {
+    var i = 0;
+    var step = Math.max(1, Math.round(CFG.typewriterCps / 30));
+    var timer = setInterval(function () {
+      i += step;
+      if (i >= fullText.length) {
+        clearInterval(timer);
+        div.innerHTML = parseMd(fullText);
+        scrollToBottom();
+        return;
+      }
+      div.innerHTML = parseMd(fullText.slice(0, i));
+      scrollToBottom();
+    }, 33);
+  }
+  function pushCTA(buttons) {
+    var row = document.createElement('div');
+    row.className = 'ijv-cta';
+    buttons.forEach(function (b) {
+      var p = document.createElement('button');
+      p.type = 'button';
+      p.className = 'ijv-pill';
+      p.textContent = b.label;
+      p.addEventListener('click', b.onClick);
+      row.appendChild(p);
+    });
+    $msgs.appendChild(row);
+    scrollToBottom();
+    return row;
+  }
+  function showTyping() {
+    var t = document.createElement('div');
+    t.className = 'ijv-typing';
+    t.innerHTML = '<span></span><span></span><span></span>';
+    $msgs.appendChild(t);
+    scrollToBottom();
+    return t;
+  }
+  function removeEl(el) { if (el && el.parentNode) el.parentNode.removeChild(el); }
+
+  /* ---------------- Call al webhook del agente ---------------- */
+  function callAgent(message, attempt) {
+    attempt = attempt || 0;
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, CFG.timeoutMs);
+    return fetch(CFG.webhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: message,
+        sessionId: getSessionId(),
+        origin: window.location.origin,
+        channel: 'web'
+      }),
+      signal: ctrl.signal
+    })
+    .then(function (r) {
+      clearTimeout(timer);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .catch(function (err) {
+      clearTimeout(timer);
+      if (attempt < CFG.maxRetries) return callAgent(message, attempt + 1);
+      throw err;
+    });
+  }
+
+  /* ---------------- Lead form (honeypot anti-bot) ---------------- */
+  function showLeadForm(prefill) {
+    if ($msgs.querySelector('.ijv-form')) { scrollToBottom(); return; }
+    prefill = prefill || {};
+    var form = document.createElement('form');
+    form.className = 'ijv-form';
+    form.innerHTML =
+      '<h4>Déjanos tus datos y te contactamos</h4>' +
+      '<input type="text" name="nombre" placeholder="Nombre completo *" required value="' + escapeHtml(prefill.nombre || '') + '">' +
+      '<input type="email" name="email" placeholder="Correo electrónico *" required value="' + escapeHtml(prefill.email || '') + '">' +
+      '<input type="tel" name="telefono" placeholder="Teléfono / WhatsApp (opcional)" value="' + escapeHtml(prefill.telefono || '') + '">' +
+      '<textarea name="consulta" rows="2" placeholder="Cuéntanos brevemente (opcional)"></textarea>' +
+      '<input type="text" name="hp" class="ijv-hp" tabindex="-1" autocomplete="off">' +
+      /* Línea legal del formulario: el footer del chat enlaza la política, pero el
+       * formulario es donde el usuario ENTREGA sus datos — ahí tiene que estar el
+       * enlace (regla #14, misma lógica) y el recordatorio de qué NO mandar por
+       * este medio. La segunda frase se ajusta al vertical: un prestador de salud
+       * (legal.datos_salud) pide explícitamente no enviar estudios clínicos. */
+      '<p class="ijv-legal">Al enviar aceptas el tratamiento de tus datos conforme al ' +
+        '<a href="' + escapeHtml(CFG.privacyUrl) + '" target="_blank" rel="noopener">aviso de privacidad</a>. ' +
+        'No compartas por este medio información sensible ni documentos personales.</p>' +
+      '<button type="submit">Enviar</button>';
+    $msgs.appendChild(form);
+    scrollToBottom();
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      var fd = new FormData(form);
+      fetch(CFG.leadsWebhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: fd.get('nombre'),
+          email: fd.get('email'),
+          telefono: fd.get('telefono'),
+          consulta: fd.get('consulta'),
+          hp: fd.get('hp'),
+          session_id: getSessionId(),
+          origin: window.location.origin
+        })
+      })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r; })
+      .then(function () {
+        removeEl(form);
+        pushBot('¡Listo! Recibimos tus datos. El equipo de ' + CFG.clientName + ' te contacta muy pronto.', { instant: true });
+        afterLeadCTA();
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Reintentar';
+        pushBot('Hubo un problema al enviar. Por favor intenta de nuevo.', { instant: true });
+      });
+    });
+  }
+
+  /* Regla #20: el usuario que dejó datos está CALIENTE — no cerrar con
+   * "te escribimos pronto" seco: CTA inmediato a Calendly / WhatsApp. */
+  function afterLeadCTA() {
+
+
+  }
+
+  /* ---------------- Intent helpers ---------------- */
+
+  function wantsContactForm(text) {
+    return /\b(lead|llama(me|r)|mis datos|dejo mis datos|d[ée]jame datos|quiero que me contacten)\b/i.test(text || '');
+  }
+
+  /* ---------------- Envío de mensajes ---------------- */
+  function send(text) {
+    text = (text || '').trim();
+    if (!text || isBusy) return;
+    pushUser(text);
+    $input.value = '';
+    autoSize();
+    isBusy = true;
+    $send.disabled = true;
+
+    var typing = showTyping();
+
+    callAgent(text)
+      .then(function (data) {
+        removeEl(typing);
+        var reply = (data && (data.output || data.response || data.text)) || 'Disculpa, no pude procesar tu mensaje. ¿Puedes reformularlo?';
+        pushBot(reply);
+
+        var showsForm = (data && (data.lead_intent || data.showForm)) || wantsContactForm(text);
+        var wantsContactBtn = /\b(equipo|contactar|asesor|coordinar)\b/i.test(reply);
+        var ctas = [];
+
+        /* Regla #18: botón persistente, NUNCA auto-open que tape la respuesta */
+        if (wantsContactBtn && !showsForm) {
+          ctas.push({ label: 'Contactar al equipo', onClick: function () { showLeadForm({ nombre: data && data.nombre, email: data && data.email, telefono: data && data.telefono }); } });
+        }
+        if (ctas.length) pushCTA(ctas);
+        if (showsForm) showLeadForm({ nombre: data && data.nombre, email: data && data.email, telefono: data && data.telefono });
+      })
+      .catch(function () {
+        removeEl(typing);
+        pushBot('Ups, tuve un problema de conexión. ¿Puedes intentarlo de nuevo?', { instant: true });
+
+      })
+      .then(function () {
+        isBusy = false;
+        $send.disabled = false;
+        $input.focus();
+      });
+  }
+
+  /* ---------------- Auto-resize textarea ---------------- */
+  function autoSize() {
+    $input.style.height = 'auto';
+    $input.style.height = Math.min($input.scrollHeight, 100) + 'px';
+  }
+  $input.addEventListener('input', autoSize);
+  $input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      send($input.value);
+    }
+  });
+  $send.addEventListener('click', function () { send($input.value); });
+
+  /* ---------------- Welcome + quick buttons ---------------- */
+  function showWelcome() {
+    /* El welcome NO pasa por send(): jamás dispara detección de lead (regla #18) */
+    pushBot(CFG.welcomeMessage, { instant: true, skipSave: true });
+    if (QUICK_BUTTONS.length) {
+      pushCTA(QUICK_BUTTONS.map(function (b) {
+        return { label: b.label, onClick: function () { send(b.mensaje); } };
+      }));
+    }
+  }
+  function restoreHistory() {
+    var hist = loadMessages();
+    if (!hist.length) return false;
+    hist.forEach(function (m) {
+      if (m.role === 'user') pushUser(m.text, { skipSave: true });
+      else pushBot(m.text, { instant: true, skipSave: true });
+    });
+    return true;
+  }
+
+  /* ---------------- Open / close / reset ---------------- */
+  function openChat() {
+    isOpen = true;
+    root.classList.add('ijv-open');
+    launcher.style.display = 'none';
+    if (!welcomed) {
+      welcomed = true;
+      getSessionId(); /* aplica TTL antes de restaurar */
+      if (!restoreHistory()) showWelcome();
+    }
+    setTimeout(function () { $input.focus(); }, 200);
+  }
+  function closeChat() {
+    isOpen = false;
+    root.classList.remove('ijv-open');
+    launcher.style.display = 'flex';
+  }
+  launcher.addEventListener('click', openChat);
+  $close.addEventListener('click', closeChat);
+  $reset.addEventListener('click', function () {
+    resetSession();
+    $msgs.innerHTML = '';
+    showToast('Conversación reiniciada');
+    setTimeout(showWelcome, 250);
+  });
+
+  /* ---------------- API pública opcional ---------------- */
+  window.youngsharkAgent = {
+    open:  openChat,
+    close: closeChat,
+    reset: function () { $reset.click(); },
+    send:  send
+  };
+})();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Página de un solo uso, con un token en la URL: jamás debe entrar a un buscador (runbook §7.5). -->
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Validar pago — YOUNGSHARK</title>
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --tinta:#000000;
+    --papel:#FFFFFF;
+    --hueso:#F1F1F1;
+    --gris:#4A4A4A;
+    --gris-cl:#7A7A7A;
+    --linea:#DEDEDE;
+    --display:'Archivo Black','Helvetica Neue','Arial Black',Impact,sans-serif;
+    --sans:'Archivo','Helvetica Neue',Helvetica,Arial,system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--hueso);color:var(--tinta);
+    font-family:var(--sans);font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    min-height:100dvh;display:flex;flex-direction:column;
+  }
+  img{max-width:100%;height:auto;display:block}
+  p{margin:0}
+  h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1.05;
+    letter-spacing:-.025em;text-transform:uppercase}
+  [hidden]{display:none !important}
+  /* En un layout monocromo el outline por default del navegador se pierde: se refuerza. */
+  a:focus-visible,button:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+
+  /* La página se lee en un celular sostenido con una mano: caja angosta y centrada. */
+  .env{width:min(560px,100%);margin-inline:auto;padding-inline:18px}
+
+  /* ---------- aviso de demo: presente pero sin robarle la escena al pago ---------- */
+  .aviso{background:var(--tinta);color:#fff;padding-block:9px}
+  .aviso .env{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    text-align:center;line-height:1.5;color:rgba(255,255,255,.78)}
+  .aviso b{color:#fff;font-weight:700}
+
+  /* ---------- cabecera ---------- */
+  .top{background:var(--papel);border-bottom:2px solid var(--tinta)}
+  .top .env{display:flex;align-items:center;gap:12px;min-height:70px}
+  .marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .marca img{width:42px;height:42px;object-fit:cover;border:2px solid var(--tinta);flex:none}
+  .marca b{display:block;font-family:var(--display);font-size:16px;letter-spacing:.01em;line-height:1}
+  .marca small{display:block;font-size:9px;letter-spacing:.22em;color:var(--gris-cl);
+    font-weight:700;text-transform:uppercase;margin-top:5px}
+
+  main{flex:1;padding-block:26px 40px}
+
+  /* ---------- tarjeta base: bordes duros, cero radios ---------- */
+  .caja{background:var(--papel);border:2px solid var(--tinta);padding:26px 22px}
+  .caja+.caja{margin-top:16px}
+  .kicker{font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--gris-cl);display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--tinta);flex:none}
+  h1{font-size:clamp(26px,7vw,34px)}
+  h2{font-size:clamp(22px,6vw,28px)}
+  .texto{margin-top:14px;font-size:15.5px;color:var(--gris);line-height:1.6}
+  .texto b{color:var(--tinta)}
+
+  /* ---------- datos del pago ---------- */
+  .monto{margin-top:22px;border-top:2px solid var(--tinta);border-bottom:2px solid var(--tinta);
+    padding-block:18px;text-align:center}
+  .monto span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--gris-cl)}
+  .monto strong{display:block;margin-top:8px;font-family:var(--display);
+    font-size:clamp(38px,12vw,52px);letter-spacing:-.03em;line-height:1}
+  .datos{margin-top:4px}
+  .datos div{padding-block:15px;border-bottom:1px solid var(--linea)}
+  .datos div:last-child{border-bottom:0}
+  .datos dt{font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gris-cl)}
+  .datos dd{margin:7px 0 0;font-size:16px;font-weight:600;line-height:1.45;
+    overflow-wrap:anywhere}
+  .datos dd.suave{font-weight:400;font-size:15px;color:var(--gris)}
+
+  /* ---------- botones: grandes, separados, imposibles de confundir ---------- */
+  .decidir{margin-top:24px;display:flex;flex-direction:column;gap:14px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+    min-height:66px;padding:18px 20px;font-family:var(--sans);font-size:14.5px;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;text-align:center;text-decoration:none;
+    border:2px solid var(--tinta);background:var(--tinta);color:#fff;cursor:pointer;
+    transition:background .14s ease,color .14s ease;-webkit-appearance:none;appearance:none}
+  .btn:hover:not(:disabled){background:#fff;color:var(--tinta)}
+  .btn-linea{background:var(--papel);color:var(--tinta)}
+  .btn-linea:hover:not(:disabled){background:var(--tinta);color:#fff}
+  .btn:disabled{opacity:.42;cursor:progress}
+  .btn i{font-style:normal;font-size:18px;line-height:1;flex:none}
+  .nota{margin-top:16px;font-size:12.5px;color:var(--gris-cl);line-height:1.5;text-align:center}
+
+  /* ---------- estado enviando ---------- */
+  .procesando{margin-top:18px;border:2px solid var(--tinta);background:var(--hueso);
+    padding:14px 16px;display:flex;align-items:center;gap:12px;
+    font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .rueda{width:16px;height:16px;border:3px solid var(--tinta);border-right-color:transparent;
+    border-radius:50%;flex:none;animation:gira .7s linear infinite}
+  @keyframes gira{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion: reduce){.rueda{animation:none}}
+
+  /* ---------- desenlaces ---------- */
+  .sello{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;
+    border:2px solid var(--tinta);font-size:11px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;margin-bottom:18px}
+  .sello.negro{background:var(--tinta);color:#fff}
+  .caja.centrada{text-align:center}
+  .caja.centrada .kicker{justify-content:center}
+  .caja.centrada .kicker::before{display:none}
+
+  footer{border-top:2px solid var(--tinta);background:var(--papel);padding-block:22px}
+  footer .env{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gris-cl);text-align:center;line-height:1.7}
+
+  @media (min-width:600px){
+    .caja{padding:34px 30px}
+    main{padding-block:34px 52px}
+  }
+</style>
+</head>
+<body>
+
+<div class="aviso">
+  <div class="env"><b>Entorno de demostración</b> — pago simulado</div>
+</div>
+
+<header class="top">
+  <div class="env">
+    <span class="marca">
+      <img id="logo" src="assets/logo.jpg" width="42" height="42" alt="Logo de YOUNGSHARK">
+      <span>
+        <b>YOUNGSHARK</b>
+        <small>Validación de pago</small>
+      </span>
+    </span>
+  </div>
+</header>
+
+<main>
+  <div class="env">
+
+    <!-- estado: loading -->
+    <section id="e-loading" class="caja centrada">
+      <div class="kicker">Un momento</div>
+      <h1>Cargando el pago</h1>
+      <p class="texto">Estamos trayendo los datos de este cobro.</p>
+      <div class="procesando" style="justify-content:center">
+        <span class="rueda" aria-hidden="true"></span><span>Consultando</span>
+      </div>
+    </section>
+
+    <!-- estado: invalid -->
+    <section id="e-invalid" class="caja centrada" hidden>
+      <div class="kicker">Link cerrado</div>
+      <h1>Este link no es válido o ya expiró</h1>
+      <p class="texto">Si el pago sigue pendiente, escríbele al asistente en el chat y te manda un aviso nuevo.</p>
+    </section>
+
+    <!-- estado: already -->
+    <section id="e-already" class="caja" hidden>
+      <span class="sello negro" id="already-sello">Ya validado</span>
+      <h1 id="already-titulo">Este pago ya fue revisado</h1>
+      <p class="texto" id="already-detalle"></p>
+      <p class="nota" style="text-align:left;margin-top:20px">Ya no hay nada que decidir aquí. Puedes cerrar esta página.</p>
+    </section>
+
+    <!-- estado: ready (y processing, que reusa esta misma pantalla con los botones apagados) -->
+    <section id="e-ready" class="caja" hidden>
+      <div class="kicker">Pago por confirmar</div>
+      <h1>Un cliente dice que ya pagó</h1>
+      <p class="texto">Revisa tu app y dinos si el dinero entró. Con un toque se resuelve.</p>
+
+      <div class="monto" id="bloque-monto" hidden>
+        <span>Monto</span>
+        <strong id="dato-monto"></strong>
+      </div>
+
+      <dl class="datos" id="datos"></dl>
+
+      <div class="decidir">
+        <button type="button" class="btn" id="btn-ok"><i aria-hidden="true">✅</i> Sí, el pago llegó</button>
+        <button type="button" class="btn btn-linea" id="btn-no"><i aria-hidden="true">❌</i> No lo encuentro</button>
+      </div>
+
+      <div class="procesando" id="procesando" hidden>
+        <span class="rueda" aria-hidden="true"></span><span>Enviando tu respuesta</span>
+      </div>
+
+      <p class="nota">Tu respuesta se aplica una sola vez.</p>
+    </section>
+
+    <!-- estado: done -->
+    <section id="e-done" class="caja" hidden>
+      <span class="sello" id="done-sello">Listo</span>
+      <h1 id="done-titulo"></h1>
+      <p class="texto" id="done-detalle"></p>
+      <p class="nota" style="text-align:left;margin-top:20px">Ya puedes cerrar esta página.</p>
+    </section>
+
+    <!-- estado: error -->
+    <section id="e-error" class="caja" hidden>
+      <div class="kicker">No se pudo enviar</div>
+      <h1 id="error-titulo">No pudimos registrar tu respuesta</h1>
+      <p class="texto">Revisa tu conexión y vuelve a intentarlo. <b>No se guardó nada</b>, así que el pago sigue esperando tu decisión.</p>
+      <div class="decidir">
+        <button type="button" class="btn" id="btn-reintentar">Reintentar</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="env">Validación de pago · YOUNGSHARK<br>Página de un solo uso</div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var N8N        = 'https://meta.ijvagency.com';
+  var INFO_URL    = N8N + '/webhook/youngshark-demo-validar-pago-info';
+  var CONFIRM_URL = N8N + '/webhook/youngshark-demo-confirmar-pago';
+  var VALIDADO_POR = 'Rafael';
+
+  var leadId = new URL(location.href).searchParams.get('id');
+  var token  = new URL(location.href).searchParams.get('token');
+
+  // -------------------------------------------------------------------------
+  // Todo lo que viene del backend se escapa antes de tocar el DOM. La página es
+  // pública y el nombre del cliente sale de un chat: es texto de un tercero.
+  // -------------------------------------------------------------------------
+  var MAPA_ESC = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
+  function esc(v){
+    if (v === null || v === undefined) return '';
+    return String(v).replace(/[&<>"']/g, function(c){ return MAPA_ESC[c]; });
+  }
+  // Un campo "vacío" no se pinta: el runbook pide mostrar solo lo que venga.
+  function hay(v){
+    return v !== null && v !== undefined && String(v).trim() !== '';
+  }
+
+  // "S/ 189" solo si el monto llega numérico; si llega como texto, se muestra tal cual.
+  function montoBonito(v){
+    if (!hay(v)) return '';
+    var n = typeof v === 'number' ? v : Number(String(v).replace(/\s/g, '').replace(/,/g, ''));
+    if (isFinite(n) && String(v).trim() !== '') {
+      return 'S/ ' + n.toLocaleString('es-PE', {minimumFractionDigits:0, maximumFractionDigits:2});
+    }
+    return String(v).trim();
+  }
+
+  // Safari no parsea "2026-08-19 15:04:00" (con espacio); se normaliza antes de intentar.
+  function fechaBonita(v){
+    if (!hay(v)) return '';
+    var crudo = String(v).trim();
+    var d = new Date(crudo.replace(' ', 'T'));
+    if (isNaN(d.getTime())) return crudo;
+    try {
+      return d.toLocaleString('es-PE', {
+        day:'numeric', month:'long', hour:'numeric', minute:'2-digit', hour12:true
+      });
+    } catch (e) { return crudo; }
+  }
+
+  var ESTADOS = ['loading','invalid','already','ready','processing','done','error'];
+  var $ = function(id){ return document.getElementById(id); };
+  var btnOk = $('btn-ok'), btnNo = $('btn-no');
+  var enviando = false;
+  var ultimaAccion = null; // para que "Reintentar" repita lo mismo que falló
+
+  // 'processing' no tiene pantalla propia: es 'ready' con los botones apagados,
+  // así el dueño no pierde de vista el pago que está decidiendo.
+  function ir(estado){
+    var visible = (estado === 'processing') ? 'ready' : estado;
+    for (var i = 0; i < ESTADOS.length; i++){
+      var el = $('e-' + ESTADOS[i]);
+      if (el) el.hidden = (ESTADOS[i] !== visible);
+    }
+    var ocupado = (estado === 'processing');
+    btnOk.disabled = ocupado;
+    btnNo.disabled = ocupado;
+    $('procesando').hidden = !ocupado;
+    if (estado !== 'loading') window.scrollTo(0, 0);
+  }
+
+  function pedir(url, cuerpo){
+    var opciones = {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(cuerpo)
+    };
+    // Timeout propio: en un celular con mala señal, un fetch colgado es peor que un error.
+    var ctrl = null, reloj = null;
+    if (typeof AbortController === 'function'){
+      ctrl = new AbortController();
+      opciones.signal = ctrl.signal;
+      reloj = setTimeout(function(){ ctrl.abort(); }, 20000);
+    }
+    return fetch(url, opciones).then(function(res){
+      if (reloj) clearTimeout(reloj);
+      return res.json().catch(function(){ return {}; }).then(function(data){
+        return {ok: res.ok, data: data || {}};
+      });
+    }, function(err){
+      if (reloj) clearTimeout(reloj);
+      throw err;
+    });
+  }
+
+  // ---------------------------------------------------------------- pantalla ready
+  function pintarPago(d){
+    var monto = montoBonito(d.monto);
+    $('bloque-monto').hidden = !monto;
+    $('dato-monto').textContent = monto;
+
+    var filas = [];
+    if (hay(d.cliente_nombre)) filas.push(['Cliente', esc(d.cliente_nombre), false]);
+    if (hay(d.canal))          filas.push(['Canal', esc(d.canal), false]);
+
+    // Producto y cantidad viven en la misma línea cuando ambos vienen.
+    var producto = '';
+    if (hay(d.producto_nombre)) producto = esc(d.producto_nombre);
+    if (hay(d.cantidad)){
+      var cant = esc(d.cantidad) + (String(d.cantidad).trim() === '1' ? ' unidad' : ' unidades');
+      producto = producto ? (producto + ' &middot; ' + cant) : cant;
+    }
+    if (producto) filas.push(['Producto', producto, false]);
+
+    if (hay(d.created_at))      filas.push(['Aviso recibido', esc(fechaBonita(d.created_at)), false]);
+    if (hay(d.context_summary)) filas.push(['Qué dijo en el chat', esc(d.context_summary), true]);
+
+    var html = '';
+    for (var i = 0; i < filas.length; i++){
+      html += '<div><dt>' + filas[i][0] + '</dt><dd' +
+              (filas[i][2] ? ' class="suave"' : '') + '>' + filas[i][1] + '</dd></div>';
+    }
+    $('datos').innerHTML = html;
+    ir('ready');
+  }
+
+  // -------------------------------------------------------------- pantalla already
+  function pintarYaValidado(d){
+    var rechazado = (d.state === 'rejected');
+    var cuando = fechaBonita(rechazado ? d.rejected_at : d.verified_at);
+    var quien  = hay(d.validated_by) ? String(d.validated_by).trim() : '';
+
+    $('already-sello').textContent = rechazado ? 'Marcado como no recibido' : 'Pago confirmado';
+    $('already-titulo').textContent = 'Este pago ya fue revisado';
+
+    var frase = rechazado
+      ? 'Ya se marcó como <b>pago no recibido</b>'
+      : 'Ya se confirmó como <b>pago recibido</b>';
+    if (quien)  frase += ', por <b>' + esc(quien) + '</b>';
+    if (cuando) frase += ' el <b>' + esc(cuando) + '</b>';
+    // es-PE formatea la tarde como "3:41 p. m." — ya trae punto final. Sin este guard
+    // la frase termina en "p. m..".
+    var cola = cuando || quien || '';
+    $('already-detalle').innerHTML = frase + (/\.$/.test(cola) ? '' : '.');
+    ir('already');
+  }
+
+  // ----------------------------------------------------------------- pantalla done
+  function pintarDesenlace(accion){
+    var ok = (accion === 'ok');
+    $('done-sello').textContent = ok ? 'Pago confirmado' : 'Pago no recibido';
+    $('done-titulo').textContent = ok ? 'Listo, venta registrada' : 'Listo, quedó marcado';
+    $('done-detalle').textContent = ok
+      ? 'Pago confirmado. La venta ya quedó registrada en tu hoja de Ventas y el asistente le avisará al cliente en el chat.'
+      : 'Pago marcado como no recibido. El asistente se lo hará saber al cliente con cuidado.';
+    ir('done');
+  }
+
+  // ------------------------------------------------------------------- carga inicial
+  function cargar(){
+    ir('loading');
+    pedir(INFO_URL, {lead_id: leadId, token: token}).then(function(r){
+      if (!r.ok) return ir('invalid');
+      var d = r.data || {};
+      if (d.state === 'verified' || d.state === 'rejected') return pintarYaValidado(d);
+      if (d.state === 'pending') return pintarPago(d);
+      return ir('invalid'); // incluye state === 'invalid' y cualquier estado desconocido
+    }).catch(function(){
+      // Caída de red al cargar: NO es "link inválido". Se ofrece reintentar para no
+      // hacerle creer al dueño que el link murió cuando solo se le fue la señal.
+      ultimaAccion = null;
+      $('error-titulo').textContent = 'No pudimos cargar el pago';
+      ir('error');
+    });
+  }
+
+  // ---------------------------------------------------------------------- decisión
+  function decidir(accion){
+    if (enviando) return;
+    if (accion === 'reject' &&
+        !window.confirm('¿Seguro que no encuentras el pago? Le avisaremos al cliente que no llegó.')) return;
+
+    enviando = true;
+    ultimaAccion = accion;
+    ir('processing');
+
+    pedir(CONFIRM_URL, {
+      lead_id: leadId, token: token, action: accion, validated_by: VALIDADO_POR
+    }).then(function(r){
+      enviando = false;
+      if (!r.ok) throw new Error('http');
+      var d = r.data || {};
+      // Si otra persona decidió primero, el backend responde con el estado final:
+      // se muestra 'already' en vez de festejar una decisión que no fue nuestra.
+      if (d.state === 'verified' || d.state === 'rejected'){
+        if ((d.state === 'verified' && accion !== 'ok') || (d.state === 'rejected' && accion !== 'reject')){
+          return pintarYaValidado(d);
+        }
+      }
+      pintarDesenlace(accion);
+    }).catch(function(){
+      enviando = false;
+      $('error-titulo').textContent = 'No pudimos registrar tu respuesta';
+      ir('error');
+    });
+  }
+
+  btnOk.addEventListener('click', function(){ decidir('ok'); });
+  btnNo.addEventListener('click', function(){ decidir('reject'); });
+  $('btn-reintentar').addEventListener('click', function(){
+    if (ultimaAccion) decidir(ultimaAccion); else cargar();
+  });
+
+  // El logo es un archivo del sitio: si algún día se mueve, se esconde en vez de
+  // dejar el ícono de imagen rota en la cabecera (regla de oro #95).
+  var logo = $('logo');
+  function sinLogo(){ logo.style.display = 'none'; }
+  logo.addEventListener('error', sinLogo);
+  if (logo.complete && logo.naturalWidth === 0) sinLogo();
+
+  // Sin id o sin token no se llama a nada: el link simplemente no sirve.
+  if (!leadId || !token) ir('invalid'); else cargar();
+})();
+</script>
+</body>
+</html>
